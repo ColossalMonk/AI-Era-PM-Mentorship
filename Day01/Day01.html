@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Day 1 of 182 — What PMs Actually Do | AI-Era PM Mentorship</title>
+<style>
+body,table,td,p,a,h1,h2,h3,div,span{margin:0;padding:0;font-size:100%;vertical-align:baseline}
+body{background:#f0f4f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-text-size-adjust:100%}
+table{border-collapse:collapse}img{border:0;display:block;max-width:100%;height:auto}a{text-decoration:none;color:inherit}
+.wrapper{width:100%;background:#f0f4f8;padding:28px 0}
+.email{max-width:660px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.14)}
+.hdr{background:linear-gradient(150deg,#060a14 0%,#0d0a2a 50%,#0a1628 100%);padding:40px 44px 32px;position:relative;overflow:hidden}
+.hdr::before{content:"01";position:absolute;right:30px;top:8px;font-size:140px;font-weight:900;color:rgba(99,102,241,.06);line-height:1;letter-spacing:-6px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;color:#a5b4fc;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:20px}
+.dot{width:6px;height:6px;border-radius:50%;background:#6366f1}
+.hdr-title{font-size:34px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.5px;margin-bottom:8px}
+.hdr-title span{color:#818cf8}
+.hdr-sub{font-size:13px;color:#475569;line-height:1.6}
+.hdr-sub b{color:#64748b}
+.hdr-chips{display:flex;gap:20px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.05)}
+.chip{font-size:10px;color:#64748b;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.chip span{color:#818cf8;font-size:13px;font-weight:700;display:block;margin-top:2px}
+.prog{background:#040812;padding:10px 44px}
+.prog table{width:100%}
+.plbl{font-size:10px;color:#475569;font-weight:700;letter-spacing:.06em;white-space:nowrap;width:44px}
+.ptrk{background:#1e293b;border-radius:3px;height:4px}
+.pfill{background:linear-gradient(90deg,#6366f1,#a855f7);border-radius:3px;height:4px;width:.6%}
+.body{padding:42px 44px}
+.slbl{font-size:10px;font-weight:800;color:#6366f1;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.obj{background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-left:4px solid #6366f1;border-radius:12px;padding:22px 24px;margin-bottom:32px}
+.obj p{font-size:15px;color:#3730a3;line-height:1.8;font-weight:500}
+.prose{font-size:15px;color:#334155;line-height:1.9;margin-bottom:16px}
+.prose strong{color:#1e293b;font-weight:700}
+.prose em{font-style:italic;color:#475569}
+.pq{font-size:20px;font-weight:700;color:#1e293b;border-left:3px solid #6366f1;padding:6px 0 6px 18px;margin:22px 0;line-height:1.4}
+.sh{font-size:20px;font-weight:700;color:#1e293b;margin:34px 0 12px;padding-top:24px;border-top:1px solid #f1f5f9}
+.imgblock{margin:22px 0;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.imgblock img{width:100%;display:block}
+.imgcap{font-size:12px;color:#94a3b8;text-align:center;padding:10px 20px;background:#f8fafc;border-top:1px solid #f1f5f9;line-height:1.5}
+.dtbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.dtbl th{background:#1e293b;color:#e2e8f0;font-weight:600;padding:10px 13px;text-align:left;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.dtbl td{border-bottom:1px solid #f1f5f9;padding:10px 13px;color:#475569;vertical-align:top;line-height:1.55}
+.dtbl tr:nth-child(even) td{background:#f8fafc}
+.dtbl tr:last-child td{border-bottom:none}
+.callout{background:#f0f9ff;border:1px solid #bae6fd;border-radius:12px;padding:18px 22px;margin:18px 0}
+.callout p{font-size:14px;color:#0369a1;line-height:1.7}
+.cs{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:24px;margin:24px 0}
+.cslbl{font-size:10px;font-weight:800;color:#16a34a;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:12px}
+.cs p{font-size:14px;color:#166534;line-height:1.8;margin-bottom:10px}
+.cs p:last-child{margin:0}
+.mis{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.mislbl{font-size:10px;font-weight:800;color:#c2410c;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.mis p{font-size:14px;color:#7c2d12;line-height:1.7}
+.ex{background:linear-gradient(135deg,#0f172a,#1a1040);border-radius:18px;padding:32px;margin:28px 0}
+.exlbl{font-size:10px;font-weight:800;color:#a5b4fc;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.extitle{font-size:24px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2}
+.exdesc{font-size:14px;color:#94a3b8;line-height:1.75;margin-bottom:22px}
+.task{display:table;width:100%;margin-bottom:14px}
+.tn{display:table-cell;width:34px;vertical-align:top;padding-top:1px}
+.tb{width:28px;height:28px;border-radius:50%;font-size:12px;font-weight:800;color:#fff;text-align:center;line-height:28px;display:block}
+.tt{display:table-cell;padding-left:12px;font-size:14px;color:#cbd5e1;line-height:1.7;vertical-align:top}
+.tt strong{color:#fff}
+.tt a{color:#a5b4fc}
+.sub-box{background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:10px;padding:12px 16px;margin-top:20px;font-size:13px;color:#818cf8;line-height:1.6}
+.tkw{display:table;width:100%;margin-bottom:13px}
+.tkwi{display:table-cell;width:26px;vertical-align:top;font-size:17px;padding-top:1px}
+.tkwt{display:table-cell;padding-left:12px;font-size:14px;color:#334155;line-height:1.7;vertical-align:top}
+.tkwt strong{color:#1e293b}
+.res{display:table;width:100%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:13px 18px;margin-bottom:10px;box-sizing:border-box}
+.resi{display:table-cell;width:32px;font-size:22px;vertical-align:middle}
+.rest{display:table-cell;padding:0 10px;vertical-align:middle}
+.restitle{font-size:13px;font-weight:600;color:#1e293b;display:block}
+.resdesc{font-size:11px;color:#64748b;display:block;margin-top:2px;line-height:1.5}
+.resa{display:table-cell;width:20px;text-align:right;vertical-align:middle;font-size:15px;color:#94a3b8}
+.tmrw{background:linear-gradient(135deg,#f8fafc,#f1f5f9);border:1px solid #e2e8f0;border-radius:14px;padding:24px;margin-top:10px}
+.tmrwlbl{font-size:10px;font-weight:800;color:#94a3b8;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:10px}
+.tmrwtitle{font-size:20px;font-weight:700;color:#1e293b;margin-bottom:8px}
+.tmrwsub{font-size:13px;color:#64748b;line-height:1.7}
+.tmrwtag{display:inline-block;background:#e0e7ff;color:#4338ca;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.footer{background:#040812;padding:26px 44px;text-align:center}
+.footer p{font-size:12px;color:#374151;line-height:1.8;margin-bottom:4px}
+.footer a{color:#818cf8}
+.footlogo{font-size:16px;font-weight:700;color:#6366f1;letter-spacing:.05em;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="wrapper"><div class="email">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="badge"><span class="dot"></span>AI-Era PM Mentorship &nbsp;·&nbsp; Day 1 of 182 &nbsp;·&nbsp; Module 1</div>
+  <h1 class="hdr-title">What PMs<br><span>Actually</span> Do</h1>
+  <p class="hdr-sub"><b>July 1, 2026</b> &nbsp;·&nbsp; Week 1 of 26 &nbsp;·&nbsp; The PM Mental Model</p>
+  <div class="hdr-chips">
+    <div class="chip">Tag<span>🧠 Mindset</span></div>
+    <div class="chip">Project<span>📝 Small (2–3 hrs)</span></div>
+    <div class="chip">roadmap.sh<span>Product Thinking</span></div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog">
+  <table cellpadding="0" cellspacing="0" width="100%"><tr>
+    <td class="plbl">Day 1</td>
+    <td style="padding:0 10px"><div class="ptrk"><div class="pfill"></div></div></td>
+    <td class="plbl" style="text-align:right">Day 182</td>
+  </tr></table>
+</div>
+
+<!-- BODY -->
+<div class="body">
+
+<div class="slbl">🎯 Today's Learning Objective</div>
+<div class="obj">
+  <p>By the end of today you'll have a precise mental model of what Product Management actually is, how it differs from adjacent roles, and what the PM mandate looks like in practice — anchored in real Indian product companies including Zepto, CRED, and Razorpay.</p>
+</div>
+
+<div class="slbl">📖 The Lesson</div>
+<p class="prose">Let's start with the question that trips up even experienced PMs in interviews:</p>
+<p class="pq">"What does a Product Manager actually do?"</p>
+<p class="prose">Most answers are vague. <em>"I work with engineers and designers."</em> <em>"I own the roadmap."</em> These aren't wrong — they're dangerously incomplete. If you can't describe your job precisely, you can't do it precisely.</p>
+<p class="prose"><strong>A PM sits at the intersection of Business, Technology, and User Experience — and their job is to find solutions that satisfy all three simultaneously.</strong></p>
+
+<!-- IMAGE 1: HERO -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (hero.png) -->
+<div class="imgblock">
+  <img src="{{IMG_HERO}}" alt="PM Mental Model — Day 1 overview diagram" width="660"/>
+  <div class="imgcap">The PM stands at the intersection of Business, Technology, and User Experience. Remove any one domain and the role collapses.</div>
+</div>
+
+<h2 class="sh">The PM Mandate: 4 Risks to Clear Before Shipping</h2>
+<p class="prose">Marty Cagan (SVPG) defines PM work through four product risks. Before shipping anything, a PM must reduce all four to acceptable levels. Miss even one — and you ship the wrong thing, to the wrong people, at the wrong time.</p>
+
+<!-- IMAGE 2: 4 RISKS -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (four-risks.png) -->
+<div class="imgblock">
+  <img src="{{IMG_FOUR_RISKS}}" alt="4 Product Risks — Value, Viability, Usability, Feasibility" width="660"/>
+  <div class="imgcap">All 4 must be cleared before committing to build. A feature users love but kills unit economics = viability failure. A profitable feature nobody can use = usability failure.</div>
+</div>
+
+<h2 class="sh">PM vs Other Roles — The Boundaries</h2>
+<p class="prose">Understanding where PM responsibility starts and ends is as important as understanding the role itself:</p>
+<table class="dtbl">
+  <tr><th>Activity</th><th>Owned By</th><th>PM's Relationship</th></tr>
+  <tr><td><strong>Write code</strong></td><td>Engineers</td><td>PM defines <em>what &amp; why</em>. Engineers decide <em>how</em>.</td></tr>
+  <tr><td><strong>Design the UI</strong></td><td>Designers</td><td>PM sets user goals + constraints. Design owns the solution.</td></tr>
+  <tr><td><strong>Manage people</strong></td><td>Eng Manager</td><td>PMs have zero direct reports. Influence through trust and evidence only.</td></tr>
+  <tr><td><strong>Run the project</strong></td><td>PjM / TPM</td><td>PM owns <em>what &amp; why</em>. PjM owns <em>when &amp; how</em>.</td></tr>
+  <tr><td><strong>Market the product</strong></td><td>PMM / Marketing</td><td>PM provides product context. PMM creates messaging.</td></tr>
+</table>
+
+<!-- IMAGE 3: NO AUTHORITY -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (no-authority.png) -->
+<div class="imgblock">
+  <img src="{{IMG_NO_AUTHORITY}}" alt="PM has no formal authority — influence without authority" width="660"/>
+  <div class="imgcap">Full accountability for product outcomes. Zero formal authority over the people who create them. Trust is the only lever.</div>
+</div>
+
+<div class="callout"><p><strong>One-sentence summary:</strong> a PM is the CEO of the product — full accountability for outcomes, zero formal authority over the people who create them. Your only tools are clarity, trust, and evidence.</p></div>
+
+<h2 class="sh">B2B vs B2C PM — Two Different Jobs</h2>
+<p class="prose">Knowing which type you're aiming for shapes every skill you prioritise over the next 6 months:</p>
+<table class="dtbl">
+  <tr><th>Dimension</th><th>B2C (Zepto, CRED, Swiggy)</th><th>B2B (Razorpay, Freshworks)</th></tr>
+  <tr><td><strong>Primary user</strong></td><td>Millions of consumers</td><td>3–7 business decision makers</td></tr>
+  <tr><td><strong>Key metric</strong></td><td>DAU, MAU, virality, retention</td><td>NRR, Expansion MRR, CAC:LTV</td></tr>
+  <tr><td><strong>Feedback loop</strong></td><td>Fast — A/B tests in days</td><td>Slow — enterprise cycles take months</td></tr>
+  <tr><td><strong>Design philosophy</strong></td><td>Delight-first, low friction</td><td>Power-first, flexibility, control</td></tr>
+</table>
+
+<div style="margin:32px 0 14px"><div class="slbl">🇮🇳 Indian Case Study</div></div>
+<div class="cs">
+  <div class="cslbl">🛒 Zepto — How the 4-Risk Framework Played Out</div>
+  <p>Zepto's PMs had to clear all four risks before committing to "10-minute delivery" — the boldest logistics promise in Indian e-commerce history.</p>
+  <p><strong>✅ Value:</strong> Real JTBD — mid-recipe emergencies, infant formula runs, last-minute party prep. High-urgency moments justified a premium. The job was genuine.</p>
+  <p><strong>✅ Viability:</strong> Only viable with dark stores at exact geographic density. PMs modelled coverage vs order density before every city expansion. Wrong density = unit economics collapse.</p>
+  <p><strong>✅ Usability:</strong> Checkout ruthlessly simplified — fewer taps than Swiggy Instamart. Every extra screen adds latency to an "I need this NOW" state.</p>
+  <p><strong>✅ Feasibility:</strong> Required rebuilding dark store packing, routing, and rider assignment from scratch. PMs co-designed the operations — not just the app.</p>
+</div>
+
+<!-- IMAGE 4: ZEPTO -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (zepto.png) -->
+<div class="imgblock">
+  <img src="{{IMG_ZEPTO}}" alt="Zepto case study — all 4 product risks cleared before shipping" width="660"/>
+  <div class="imgcap">Zepto cleared all 4 risks before committing. PMs co-designed the operations — not just the app.</div>
+</div>
+
+<div style="margin:32px 0 14px"><div class="slbl">⚠️ 3 Common Mistakes — Week 1 Edition</div></div>
+<div class="mis"><div class="mislbl">❌ Mistake #1 — Confusing Features with Solutions</div><p>New PMs jump to "we should build X" without asking what problem X solves. A feature is a hypothesis, not an answer. Complete this sentence first: "We're building this because users need [Y] so that [business outcome Z]." If you can't — you're not ready to build it.</p></div>
+<div class="mis"><div class="mislbl">❌ Mistake #2 — Thinking PM = Boss</div><p>PMs have enormous influence and zero formal authority. You can't order engineers to build something — you earn buy-in through trust, data, and conviction. New PMs who try to play CEO get ignored. The best PMs make the team feel like <em>they</em> made every decision.</p></div>
+<div class="mis"><div class="mislbl">❌ Mistake #3 — Measuring Output Not Outcome</div><p>"We shipped 14 features this quarter" is a vanity metric. "We grew day-7 retention from 38% to 51%" is what matters. PMs are always judged by outcomes — changes in user behaviour and business metrics, never by changelog length.</p></div>
+
+<!-- IMAGE 5: SWEET SPOT VENN -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (sweet-spot.png) -->
+<div class="imgblock">
+  <img src="{{IMG_SWEET_SPOT}}" alt="PM Sweet Spot Venn Diagram" width="660"/>
+  <div class="imgcap">Valuable to users · Viable for business · Feasible to build · Usable in practice — simultaneously, always.</div>
+</div>
+
+<div class="ex">
+  <div class="exlbl">🏋️ Day 1 Exercise</div>
+  <div class="extitle">The PM Role Teardown</div>
+  <p class="exdesc">Your first portfolio piece. Applies today's frameworks immediately and builds structured thinking from Day 1.</p>
+  <div class="task"><div class="tn"><span class="tb" style="background:#6366f1">1</span></div><div class="tt">Find 3 real PM JDs from <strong>Zepto</strong>, <strong>CRED</strong>, and <strong>Razorpay</strong> careers pages. Copy each into a Notion doc.</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#6366f1">2</span></div><div class="tt">Extract the top 10 recurring skill/responsibility keywords per JD. Build a comparison table. What patterns repeat across all three?</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#6366f1">3</span></div><div class="tt">Write a <strong>200-word answer</strong> to "What does a PM do?" in plain English — family dinner, zero jargon, no "I align stakeholders."</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#6366f1">4</span></div><div class="tt">Pick 1 PM you admire. Write 3 specific things they did that exemplify the PM mandate — backed by real evidence (LinkedIn, interviews, announcements).</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#7c3aed">★</span></div><div class="tt"><strong>Bonus:</strong> Screenshot <a href="https://roadmap.sh/product-manager">roadmap.sh/product-manager</a>. Circle 5 skills you're already confident in. Save it — we'll revisit at Month 3 and Month 6 to measure growth visually.</div></div>
+  <div class="sub-box">⏱️ <strong>Time:</strong> 2–3 hours &nbsp;·&nbsp; 📤 <strong>Submit:</strong> Share your Notion link in chat — I'll review, score /100, and adapt Day 2 to your specific gaps.</div>
+</div>
+
+<div class="slbl">✅ Key Takeaways</div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">The PM mandate: find solutions simultaneously <strong>valuable</strong> to users, <strong>viable</strong> for the business, <strong>feasible</strong> for the team, and <strong>usable</strong> in practice. All four — not three.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">PMs influence without authority. You earn buy-in through trust, data, and shared conviction — not through seniority or orders.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">PMs are judged by <strong>outcomes</strong> — user behaviour changes and business metrics — never by features shipped or velocity delivered.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">B2C and B2B PM roles feel like different jobs. Know which world you're aiming for — it shapes every skill to prioritise over the next 6 months.</div></div>
+
+<div style="margin:32px 0 14px"><div class="slbl">📚 Further Reading — All Free</div></div>
+<a href="https://a16z.com/good-product-manager-bad-product-manager/" class="res"><div class="resi">📄</div><div class="rest"><span class="restitle">Good PM / Bad PM — Ben Horowitz (a16z)</span><span class="resdesc">The most-read PM article ever. 15-minute read. Memorise it today — you'll quote it for years.</span></div><div class="resa">→</div></a>
+<a href="https://svpg.com/product-manager-vs-product-owner/" class="res"><div class="resi">📄</div><div class="rest"><span class="restitle">PM vs Product Owner — Marty Cagan (SVPG)</span><span class="resdesc">Clears up the most common role confusion in Indian product companies in under 5 minutes.</span></div><div class="resa">→</div></a>
+<a href="https://roadmap.sh/product-manager" class="res"><div class="resi">🗺️</div><div class="rest"><span class="restitle">PM Skills Roadmap — roadmap.sh</span><span class="resdesc">The interactive skill map we'll use as our navigation system for all 6 months. Bookmark it.</span></div><div class="resa">→</div></a>
+<a href="https://www.lennysnewsletter.com" class="res"><div class="resi">📰</div><div class="rest"><span class="restitle">Lenny's Newsletter — Free Archive</span><span class="resdesc">Best free PM writing on the internet. Bookmark it — we'll reference specific articles throughout.</span></div><div class="resa">→</div></a>
+
+<div style="margin:32px 0 14px"><div class="slbl">👀 Tomorrow — Day 2</div></div>
+<div class="tmrw">
+  <div class="tmrwtag">📅 July 2, 2026</div>
+  <div class="tmrwtitle">Business Models &amp; Systems Thinking</div>
+  <div class="tmrwsub">We'll map how companies actually make money, draw your first causal loop diagram, and analyse why Swiggy and DoorDash chose different expansion strategies despite building near-identical businesses. You'll walk away able to read any company's business model in under 10 minutes — a skill you'll use every week as a PM.</div>
+</div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <div class="footlogo">nirantar</div>
+  <p>AI-Era PM Mentorship &nbsp;·&nbsp; Siddhartha Satyarthi &nbsp;·&nbsp; Day 1 of 182 &nbsp;·&nbsp; July 1, 2026</p>
+  <p>Submit your exercise in chat — I'll review, score /100, and tailor Day 2 to your specific gaps.</p>
+  <p style="margin-top:8px"><a href="https://roadmap.sh/product-manager">roadmap.sh/pm</a> &nbsp;·&nbsp; <a href="https://www.anthropic.com">Powered by Claude</a></p>
+</div>
+
+</div></div>
+</body>
+</html>
