@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+<style>
+body,table,td,p,a,h1,h2,h3,div,span{margin:0;padding:0;font-size:100%;vertical-align:baseline}
+body{background:#f0f4f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;-webkit-text-size-adjust:100%}
+table{border-collapse:collapse}img{border:0;display:block;max-width:100%;height:auto}a{text-decoration:none;color:inherit}
+.wrapper{width:100%;background:#f0f4f8;padding:28px 0}
+.email{max-width:660px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.14)}
+.hdr{background:linear-gradient(150deg,#060a14 0%,#0d0a2a 50%,#0a1628 100%);padding:40px 44px 32px;position:relative;overflow:hidden}
+.hdr::before{content:"02";position:absolute;right:30px;top:8px;font-size:140px;font-weight:900;color:rgba(52,211,153,.06);line-height:1;letter-spacing:-6px}
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.35);border-radius:20px;padding:5px 14px;font-size:11px;font-weight:700;color:#6ee7b7;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:20px}
+.dot{width:6px;height:6px;border-radius:50%;background:#34d399}
+.hdr-title{font-size:34px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.5px;margin-bottom:8px}
+.hdr-title span{color:#6ee7b7}
+.hdr-sub{font-size:13px;color:#475569;line-height:1.6}
+.hdr-sub b{color:#64748b}
+.hdr-chips{display:flex;gap:20px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.05)}
+.chip{font-size:10px;color:#64748b;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.chip span{color:#6ee7b7;font-size:13px;font-weight:700;display:block;margin-top:2px}
+.prog{background:#040812;padding:10px 44px}
+.prog table{width:100%}
+.plbl{font-size:10px;color:#475569;font-weight:700;letter-spacing:.06em;white-space:nowrap;width:44px}
+.ptrk{background:#1e293b;border-radius:3px;height:4px}
+.pfill{background:linear-gradient(90deg,#34d399,#6366f1);border-radius:3px;height:4px;width:1.1%}
+.body{padding:42px 44px}
+.slbl{font-size:10px;font-weight:800;color:#059669;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.obj{background:linear-gradient(135deg,#ecfdf5,#f0fdfa);border-left:4px solid #34d399;border-radius:12px;padding:22px 24px;margin-bottom:32px}
+.obj p{font-size:15px;color:#065f46;line-height:1.8;font-weight:500}
+.prose{font-size:15px;color:#334155;line-height:1.9;margin-bottom:16px}
+.prose strong{color:#1e293b;font-weight:700}
+.prose em{font-style:italic;color:#475569}
+.pq{font-size:20px;font-weight:700;color:#1e293b;border-left:3px solid #34d399;padding:6px 0 6px 18px;margin:22px 0;line-height:1.4}
+.sh{font-size:20px;font-weight:700;color:#1e293b;margin:34px 0 12px;padding-top:24px;border-top:1px solid #f1f5f9}
+.imgblock{margin:22px 0;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 2px 12px rgba(0,0,0,.07)}
+.imgblock img{width:100%;display:block}
+.imgcap{font-size:12px;color:#94a3b8;text-align:center;padding:10px 20px;background:#f8fafc;border-top:1px solid #f1f5f9;line-height:1.5}
+.dtbl{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.dtbl th{background:#1e293b;color:#e2e8f0;font-weight:600;padding:10px 13px;text-align:left;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.dtbl td{border-bottom:1px solid #f1f5f9;padding:10px 13px;color:#475569;vertical-align:top;line-height:1.55}
+.dtbl tr:nth-child(even) td{background:#f8fafc}
+.dtbl tr:last-child td{border-bottom:none}
+.callout{background:#f0fdfa;border:1px solid #99f6e4;border-radius:12px;padding:18px 22px;margin:18px 0}
+.callout p{font-size:14px;color:#0f766e;line-height:1.7}
+.cs{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:24px;margin:24px 0}
+.cslbl{font-size:10px;font-weight:800;color:#1d4ed8;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:12px}
+.cs p{font-size:14px;color:#1e3a5f;line-height:1.8;margin-bottom:10px}
+.cs p:last-child{margin:0}
+.mis{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #f97316;border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.mislbl{font-size:10px;font-weight:800;color:#c2410c;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px}
+.mis p{font-size:14px;color:#7c2d12;line-height:1.7}
+.ex{background:linear-gradient(135deg,#0f172a,#052e2b);border-radius:18px;padding:32px;margin:28px 0}
+.exlbl{font-size:10px;font-weight:800;color:#6ee7b7;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.extitle{font-size:24px;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2}
+.exdesc{font-size:14px;color:#94a3b8;line-height:1.75;margin-bottom:22px}
+.task{display:table;width:100%;margin-bottom:14px}
+.tn{display:table-cell;width:34px;vertical-align:top;padding-top:1px}
+.tb{width:28px;height:28px;border-radius:50%;font-size:12px;font-weight:800;color:#fff;text-align:center;line-height:28px;display:block}
+.tt{display:table-cell;padding-left:12px;font-size:14px;color:#cbd5e1;line-height:1.7;vertical-align:top}
+.tt strong{color:#fff}
+.tt a{color:#6ee7b7}
+.sub-box{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.25);border-radius:10px;padding:12px 16px;margin-top:20px;font-size:13px;color:#6ee7b7;line-height:1.6}
+.tkw{display:table;width:100%;margin-bottom:13px}
+.tkwi{display:table-cell;width:26px;vertical-align:top;font-size:17px;padding-top:1px}
+.tkwt{display:table-cell;padding-left:12px;font-size:14px;color:#334155;line-height:1.7;vertical-align:top}
+.tkwt strong{color:#1e293b}
+.res{display:table;width:100%;background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:13px 18px;margin-bottom:10px;box-sizing:border-box}
+.resi{display:table-cell;width:32px;font-size:22px;vertical-align:middle}
+.rest{display:table-cell;padding:0 10px;vertical-align:middle}
+.restitle{font-size:13px;font-weight:600;color:#1e293b;display:block}
+.resdesc{font-size:11px;color:#64748b;display:block;margin-top:2px;line-height:1.5}
+.resa{display:table-cell;width:20px;text-align:right;vertical-align:middle;font-size:15px;color:#94a3b8}
+.tmrw{background:linear-gradient(135deg,#f8fafc,#f1f5f9);border:1px solid #e2e8f0;border-radius:14px;padding:24px;margin-top:10px}
+.tmrwlbl{font-size:10px;font-weight:800;color:#94a3b8;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:10px}
+.tmrwtitle{font-size:20px;font-weight:700;color:#1e293b;margin-bottom:8px}
+.tmrwsub{font-size:13px;color:#64748b;line-height:1.7}
+.tmrwtag{display:inline-block;background:#d1fae5;color:#047857;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.footer{background:#040812;padding:26px 44px;text-align:center}
+.footer p{font-size:12px;color:#374151;line-height:1.8;margin-bottom:4px}
+.footer a{color:#6ee7b7}
+.footlogo{font-size:16px;font-weight:700;color:#34d399;letter-spacing:.05em;margin-bottom:8px}
+.feedback{background:#fefce8;border:1px solid #fde047;border-radius:12px;padding:18px 22px;margin-bottom:28px}
+.feedbacklbl{font-size:10px;font-weight:800;color:#a16207;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.feedback p{font-size:14px;color:#713f12;line-height:1.75;margin-bottom:6px}
+.feedback p:last-child{margin:0}
+.score{display:inline-block;background:#a16207;color:#fff;font-size:13px;font-weight:800;padding:3px 12px;border-radius:8px;margin-left:4px}
+</style>
+	</head>
+	<body>
+<div style="display: none; max-height: 0px; overflow: hidden;">{{PreviewText}}&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
+<div class="wrapper"><div class="email">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="badge"><span class="dot"></span>AI-Era PM Mentorship &nbsp;·&nbsp; Day 2 of 182 &nbsp;·&nbsp; Module 1</div>
+  <h1 class="hdr-title">Business Models<br>&amp; <span>Systems</span> Thinking</h1>
+  <p class="hdr-sub"><b>July 2, 2026</b> &nbsp;·&nbsp; Week 1 of 26 &nbsp;·&nbsp; How Companies Actually Work</p>
+  <div class="hdr-chips">
+    <div class="chip">Tag<span>💰 Strategy</span></div>
+    <div class="chip">Project<span>📝 Small (3–4 hrs)</span></div>
+    <div class="chip">roadmap.sh<span>Product Strategy</span></div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog">
+  <table cellpadding="0" cellspacing="0" width="100%"><tr>
+    <td class="plbl">Day 2</td>
+    <td style="padding:0 10px"><div class="ptrk"><div class="pfill"></div></div></td>
+    <td class="plbl" style="text-align:right">Day 182</td>
+  </tr></table>
+</div>
+
+<!-- BODY -->
+<div class="body">
+
+<!-- DAY 1 FEEDBACK -->
+<div class="feedback">
+  <div class="feedbacklbl">📋 Day 1 Feedback — Score: <span class="score">86/100</span></div>
+  <p><strong>Standout:</strong> your keyword synthesis found the exact same "influence without authority" pattern I taught you — applied to real evidence, same day. That's the instinct this whole program is built around.</p>
+  <p><strong>Growth area:</strong> the Nikita Bier examples were AI-referenced, not primary-sourced. As an AI-era PM, verifying your own AI output against real citations is a skill, not a formality — we'll keep an eye on this.</p>
+  <p><strong>Signal from your roadmap.sh circles:</strong> you're not a blank-slate beginner — sprint mechanics, PRDs, and user research already feel familiar. I'll lean slightly more into depth from here.</p>
+</div>
+
+<div class="slbl">🎯 Today's Learning Objective</div>
+<div class="obj">
+  <p>By the end of today, you'll be able to map any company's business model into a systems view — actors, flows, feedback loops — in under 10 minutes, and explain why identical companies solving the identical problem (Swiggy and Zomato) built completely different systems.</p>
+</div>
+
+<div class="slbl">📖 The Lesson</div>
+<p class="prose">Yesterday you learned what a PM does. Today: what a PM is actually optimizing <em>for</em>. Every feature you'll ever propose exists inside a business model — and if you don't understand the model, you can't tell if your feature is a good idea or a slow-motion mistake.</p>
+<p class="prose">Here's the shift in thinking: stop looking at a company as a product. Start looking at it as a <strong>system</strong> — a set of actors, connected by flows of money, data, and value, with feedback loops that either compound growth or quietly strangle it.</p>
+
+<!-- IMAGE 1: HERO -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (hero.png) -->
+<div class="imgblock">
+  <img src="{{IMG_HERO}}" alt="Business Models and Systems Thinking — Day 2 overview" width="660"/>
+  <div class="imgcap">Every company is a system — users, product, and revenue connected in a loop. Follow the money, and the whole business model becomes obvious.</div>
+</div>
+
+<h2 class="sh">5 Business Model Archetypes</h2>
+<p class="prose">Almost every company you'll ever work at fits one of these five patterns — or a hybrid of two. Knowing which one you're in tells you instantly who your real customer is, what "success" looks like, and which metrics actually matter.</p>
+
+<!-- IMAGE 2: BUSINESS MODELS -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (business-models.png) -->
+<div class="imgblock">
+  <img src="{{IMG_BUSINESS_MODELS}}" alt="5 Business Model Archetypes — SaaS, Marketplace, Platform, Freemium" width="660"/>
+  <div class="imgcap">The model determines what "good" means. A marketplace PM optimizes liquidity. A SaaS PM optimizes retention. Confusing the two leads to solving the wrong problem.</div>
+</div>
+
+<table class="dtbl">
+  <tr><th>Model</th><th>Who Pays</th><th>PM's Real Job</th></tr>
+  <tr><td><strong>SaaS</strong></td><td>Subscriber, monthly</td><td>Reduce churn, prove ongoing value every billing cycle</td></tr>
+  <tr><td><strong>Marketplace</strong></td><td>Take-rate on transactions</td><td>Balance supply &amp; demand liquidity — too little of either kills it</td></tr>
+  <tr><td><strong>Platform</strong></td><td>Usage / revenue share from builders</td><td>Make the platform indispensable to build on top of</td></tr>
+  <tr><td><strong>Freemium</strong></td><td>Small % who upgrade</td><td>Design the exact moment free becomes limiting</td></tr>
+  <tr><td><strong>Usage-based</strong></td><td>Per unit consumed</td><td>Align price directly with value delivered, not seats</td></tr>
+</table>
+
+<h2 class="sh">Systems Thinking: The PM's Real Superpower</h2>
+<p class="prose">A causal loop diagram is the single most underused tool in product management. It answers a question metrics alone never can: <em>why</em> does this number move the way it does?</p>
+<p class="prose">Two loop types matter: <strong>reinforcing loops</strong> compound — more of A creates more of B creates more of A, growth accelerates. <strong>Balancing loops</strong> self-correct — more of A eventually creates less of A, growth plateaus or reverses. Every product has both running simultaneously, often invisibly.</p>
+
+<!-- IMAGE 3: CAUSAL LOOP -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (causal-loop.png) -->
+<div class="imgblock">
+  <img src="{{IMG_CAUSAL_LOOP}}" alt="Causal Loop Diagram — reinforcing vs balancing loops" width="660"/>
+  <div class="imgcap">Reinforcing loops compound growth. Balancing loops cap it. Every metric you're trying to move lives inside one of these — find the loop before you pull the lever.</div>
+</div>
+
+<div class="callout"><p><strong>Worked example:</strong> "More riders → faster deliveries → happier customers → more orders → more riders" is reinforcing — it compounds. But "more orders → riders overloaded → slower deliveries → unhappier customers → fewer orders" is balancing, running at the same time, capping how fast the first loop can grow. A PM's job is often just: strengthen the reinforcing loop, weaken the balancing one.</p></div>
+
+<h2 class="sh">Aggregation Theory — How Platforms Actually Win</h2>
+<p class="prose">Ben Thompson's Aggregation Theory explains why companies like Zomato, Amazon, and Google dominate: they sit between supply and demand and control the relationship. Supply and demand never touch each other directly — they only meet through the platform.</p>
+
+<!-- IMAGE 4: AGGREGATION THEORY -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (aggregation-theory.png) -->
+<div class="imgblock">
+  <img src="{{IMG_AGGREGATION}}" alt="Aggregation Theory — platform controls supply and demand" width="660"/>
+  <div class="imgcap">The middleman becomes the market. Whoever controls the connection between supply and demand controls the pricing power, the data, and the relationship.</div>
+</div>
+
+<p class="prose">This is why platform PMs obsess over one deceptively simple question: <strong>if supply and demand could bypass us, would they?</strong> If the answer is yes, you don't have a moat — you have a temporary convenience.</p>
+
+<div style="margin:32px 0 14px"><div class="slbl">🇮🇳 Indian Case Study</div></div>
+<div class="cs">
+  <div class="cslbl">🍔 Swiggy vs Zomato — Same JTBD, Diverging Systems</div>
+  <p>Both companies started solving the identical job: get food delivered fast. Same market, same timing, nearly identical early product. Five years later, their systems look completely different.</p>
+  <p><strong>Swiggy's bet:</strong> doubled down on speed and logistics — building Instamart as a quick-commerce extension of the same delivery-fleet system they already had. One reinforcing loop, made stronger.</p>
+  <p><strong>Zomato's bet:</strong> diversified the system entirely — Dining Out (restaurant discovery/reservations) plus acquiring Blinkit outright rather than building quick-commerce internally. Multiple loops, hedged against any single one weakening.</p>
+  <p>Neither choice was "wrong." They reflect different systems-thinking bets about where the reinforcing loops were strongest — and where the balancing loops (fleet capacity, delivery radius, restaurant supply) would bite first.</p>
+</div>
+
+<!-- IMAGE 5: SWIGGY VS ZOMATO -->
+<!-- 🔧 CHANGE IMAGE — ENTER URL BELOW (swiggy-zomato.png) -->
+<div class="imgblock">
+  <img src="{{IMG_SWIGGY_ZOMATO}}" alt="Swiggy vs Zomato — diverging business model strategies" width="660"/>
+  <div class="imgcap">Identical starting JTBD. Completely different systems-thinking bets. Two different five-year outcomes.</div>
+</div>
+
+<div style="margin:32px 0 14px"><div class="slbl">⚠️ 3 Common Mistakes — Systems Thinking Edition</div></div>
+<div class="mis"><div class="mislbl">❌ Mistake #1 — Confusing Revenue Model with Business Model</div><p>"We charge a subscription" is a revenue model, not a business model. The business model is the entire system — who the actors are, what they exchange, and what loops sustain it. Two companies can share a revenue model and have opposite business models.</p></div>
+<div class="mis"><div class="mislbl">❌ Mistake #2 — Shipping Features That Ignore the Loop</div><p>A feature that boosts one metric while quietly weakening the loop that sustains it is a trap. Adding aggressive push notifications might spike short-term opens while eroding the trust loop that drives long-term retention. Always ask: which loop does this feature strengthen, and which might it damage?</p></div>
+<div class="mis"><div class="mislbl">❌ Mistake #3 — Treating Every User as a Paying Customer</div><p>In a marketplace, half your "users" — the supply side — are rarely who you monetize directly. Design decisions that delight demand while quietly punishing supply (like Swiggy's delivery partners) eventually collapse the whole system, revenue included.</p></div>
+
+<div class="ex">
+  <div class="exlbl">🏋️ Day 2 Exercise</div>
+  <div class="extitle">Business Model Teardown</div>
+  <p class="exdesc">Pick two companies in the same space with different systems — building on today's Swiggy/Zomato example, or choose your own pair.</p>
+  <div class="task"><div class="tn"><span class="tb" style="background:#34d399">1</span></div><div class="tt">Choose 2 companies solving the same core job (e.g. Swiggy vs Zomato, or PhonePe vs Paytm). Draw an actor diagram for each — who exchanges what with whom.</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#34d399">2</span></div><div class="tt">Identify 2 reinforcing feedback loops per company. Write each as a chain: "More X → More Y → More X."</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#34d399">3</span></div><div class="tt">Identify 1 balancing loop per company — the thing that caps their growth or creates friction.</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#34d399">4</span></div><div class="tt">Map all revenue streams for both companies. Which one has more diversified loops? Which is more fragile if one loop breaks?</div></div>
+  <div class="task"><div class="tn"><span class="tb" style="background:#059669">★</span></div><div class="tt"><strong>Bonus:</strong> Write one paragraph — which company's system would you rather be the PM inside of, and why? Defend it with the loops you identified, not vibes.</div></div>
+  <div class="sub-box">⏱️ <strong>Time:</strong> 3–4 hours &nbsp;·&nbsp; 📤 <strong>Submit:</strong> Share your actor diagrams + loop analysis in chat — I'll review, score /100, and adapt Day 3 to your gaps.</div>
+</div>
+
+<div class="slbl">✅ Key Takeaways</div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">Every company is a <strong>system</strong> — actors, flows, and feedback loops — not just a product. Understand the system before proposing a feature inside it.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">Business models fall into 5 archetypes: SaaS, Marketplace, Platform, Freemium, Usage-based. Each defines what "good" means differently.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt"><strong>Reinforcing loops</strong> compound growth. <strong>Balancing loops</strong> cap it. Every product runs both, simultaneously, often invisibly.</div></div>
+<div class="tkw"><div class="tkwi">✅</div><div class="tkwt">Aggregation Theory: platforms win by controlling the connection between supply and demand — never letting the two sides bypass them directly.</div></div>
+
+<div style="margin:32px 0 14px"><div class="slbl">📚 Further Reading — All Free</div></div>
+<a href="https://stratechery.com/2015/aggregation-theory/" class="res"><div class="resi">📄</div><div class="rest"><span class="restitle">Aggregation Theory — Ben Thompson (Stratechery)</span><span class="resdesc">The original essay. Dense but essential — read it twice.</span></div><div class="resa">→</div></a>
+<a href="https://www.lennysnewsletter.com/p/competitive-advantages" class="res"><div class="resi">📄</div><div class="rest"><span class="restitle">Building Competitive Moats — Lenny Rachitsky</span><span class="resdesc">Practical framing of moats for PMs who don't have an MBA.</span></div><div class="resa">→</div></a>
+<a href="https://www.systems-thinking.org/" class="res"><div class="resi">🔁</div><div class="rest"><span class="restitle">Systems Thinking Basics — Free Primer</span><span class="resdesc">Actors, flows, and loops explained with more worked examples.</span></div><div class="resa">→</div></a>
+<a href="https://roadmap.sh/product-manager" class="res"><div class="resi">🗺️</div><div class="rest"><span class="restitle">PM Skills Roadmap — roadmap.sh</span><span class="resdesc">Revisit Product Strategy node — today's lesson lives here.</span></div><div class="resa">→</div></a>
+
+<div style="margin:32px 0 14px"><div class="slbl">👀 Tomorrow — Day 3</div></div>
+<div class="tmrw">
+  <div class="tmrwtag">📅 July 3, 2026</div>
+  <div class="tmrwtitle">Product Strategy &amp; Competitive Positioning</div>
+  <div class="tmrwsub">Now that you can see a company as a system, we'll learn how to choose where to compete and how to win — Playing to Win, competitive moats, and why CRED's strategy is defined as much by who they exclude as who they include.</div>
+</div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <div class="footlogo">nirantar</div>
+  <p>AI-Era PM Mentorship &nbsp;·&nbsp; Siddhartha Satyarthi &nbsp;·&nbsp; Day 2 of 182 &nbsp;·&nbsp; July 2, 2026</p>
+  <p>Submit your exercise in chat — I'll review, score /100, and tailor Day 3 to your specific gaps.</p>
+  <p style="margin-top:8px"><a href="https://roadmap.sh/product-manager">roadmap.sh/pm</a> &nbsp;·&nbsp; <a href="https://www.anthropic.com">Powered by Claude</a></p>
+  <p style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.06);color:#374151">{{SenderInfo}}</p>
+  <p style="margin-top:8px"><a href="{{UnsubscribeURL}}" style="color:#6ee7b7">Unsubscribe</a> &nbsp;·&nbsp; <a href="{{RewardsURL}}" style="color:#6ee7b7">Powered by EmailOctopus</a></p>
+</div>
+
+</div></div>
+	</body>
+</html>
